@@ -24,12 +24,24 @@
 import _ from 'lodash';
 import * as d3 from 'd3';
 import Graph from '../graph/graph';
+import { GroupedBarGraphConfig } from '../config/';
 
 /**
  * Class representing a grouped bar graph.
  * @extends Graph
  */
 class GroupedBarGraph extends Graph {
+  /**
+   * Create a bar graph.
+   * @constructor
+   * @param {Object} input - The input data passed to the graph.
+   * @param {String} classElement - The class of the DOM element placeholder.
+   * @param {Object} config - The custom JSON configuration of the graph.
+   */
+  constructor(input, classElement, config = {}) {
+    super(input, classElement, Object.assign({}, GroupedBarGraphConfig.other, config));
+  }
+
   /**
    * Instantiate and render a grouped bar graph.
    * @function

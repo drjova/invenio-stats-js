@@ -43,9 +43,9 @@ class Graph {
    */
   constructor(input, classElement, config) {
     // Setters
+    this.classElement = classElement;
     this.config = config;
     this.input = input;
-    this.classElement = classElement;
 
     // Set the keys for the axis based on the given configuration
     this.keyX = this.config.axis.x.mapTo;

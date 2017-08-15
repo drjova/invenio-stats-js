@@ -27,12 +27,24 @@
 import _ from 'lodash';
 import * as d3 from 'd3';
 import Graph from '../graph/graph';
+import { BarGraphConfig } from '../config/';
 
 /**
  * Class representing a bar graph.
  * @extends Graph
  */
 class BarGraph extends Graph {
+  /**
+   * Create a bar graph.
+   * @constructor
+   * @param {Object} input - The input data passed to the graph.
+   * @param {String} classElement - The class of the DOM element placeholder.
+   * @param {Object} config - The custom JSON configuration of the graph.
+   */
+  constructor(input, classElement, config = {}) {
+    super(input, classElement, Object.assign({}, BarGraphConfig.other, config));
+  }
+
   /**
    * Instantiate and render a bar graph.
    * @function
