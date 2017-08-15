@@ -136,7 +136,7 @@ Here we present the structure of the default configuration object for the bar gr
   },
   legend: {
     visible: false,  // specify the visibility of the graph legend
-    position: 'side'  // specify the position of the graph legend('top', 'bottom', 'left', 'right')
+    position: 'side'  // specify the position of the graph legend('bottom', 'side')
   },
   zoom: {
     enabled: true  // enable or disable the zooming/panning functionality
