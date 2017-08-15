@@ -52,6 +52,7 @@ LineGraphConfig.date = {
         format: '%d %b %Y'
       },
       options: {
+        padding: 1,
         label: {
           value: 'Date',
           visible: false
@@ -143,6 +144,7 @@ LineGraphConfig.other = {
         padding: 0.2
       },
       options: {
+        padding: 0,
         label: {
           value: 'Country',
           visible: false

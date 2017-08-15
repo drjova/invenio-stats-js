@@ -39,7 +39,8 @@ class GroupedBarGraph extends Graph {
    * @param {Object} config - The custom JSON configuration of the graph.
    */
   constructor(input, classElement, config = {}) {
-    super(input, classElement, Object.assign({}, GroupedBarGraphConfig.other, config));
+    const keyType = input[Object.keys(input)[0]].key_type;
+    super(input, classElement, Object.assign({}, GroupedBarGraphConfig[keyType], config));
   }
 
   /**
@@ -84,7 +85,7 @@ class GroupedBarGraph extends Graph {
       .rangeRound([0, x0.bandwidth()]);
 
     // Add the horizontal axis, passing the desired padding and the outer scale
-    super.makeAxisX(0.1, x0);
+    super.makeAxisX(x0);
 
     // Add the vertical axis
     super.makeAxisY();
@@ -202,7 +203,7 @@ class GroupedBarGraph extends Graph {
       .domain(keys).rangeRound([0, x0.bandwidth()]);
 
     // Update the horizontal axis, passing the desired padding and the new outer scale
-    super.makeAxisX(0.1, x0);
+    super.makeAxisX(x0);
 
     // Update the vertical axis
     super.makeAxisY();

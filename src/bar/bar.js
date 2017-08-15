@@ -42,7 +42,8 @@ class BarGraph extends Graph {
    * @param {Object} config - The custom JSON configuration of the graph.
    */
   constructor(input, classElement, config = {}) {
-    super(input, classElement, Object.assign({}, BarGraphConfig.other, config));
+    const keyType = input[Object.keys(input)[0]].key_type;
+    super(input, classElement, Object.assign({}, BarGraphConfig[keyType], config));
   }
 
   /**
@@ -61,7 +62,7 @@ class BarGraph extends Graph {
     super.parseData();
 
     // Add the horizontal axis, passing the desired padding
-    super.makeAxisX(0.05);
+    super.makeAxisX();
 
     // Add the vertical axis
     super.makeAxisY();
@@ -186,7 +187,7 @@ class BarGraph extends Graph {
     if (Object.keys(newData) > 0) super.updateData(newData);
 
     // Update the horizontal axis, passing the desired padding
-    super.makeAxisX(0.05);
+    super.makeAxisX();
 
     // Update the vertical axis
     super.makeAxisY();

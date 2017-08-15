@@ -43,6 +43,7 @@ GroupedBarGraphConfig.other = {
         format: null
       },
       options: {
+        padding: 0.1,
         label: {
           value: 'Country',
           visible: false

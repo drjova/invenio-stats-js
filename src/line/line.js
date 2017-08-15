@@ -42,7 +42,8 @@ class LineGraph extends Graph {
    * @param {Object} config - The custom JSON configuration of the graph.
    */
   constructor(input, classElement, config = {}) {
-    super(input, classElement, Object.assign({}, LineGraphConfig.date, config));
+    const keyType = input[Object.keys(input)[0]].key_type;
+    super(input, classElement, Object.assign({}, LineGraphConfig[keyType], config));
   }
 
   /**

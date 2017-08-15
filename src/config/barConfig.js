@@ -43,6 +43,7 @@ BarGraphConfig.other = {
         format: null
       },
       options: {
+        padding: 0.05,
         label: {
           value: 'Country',
           visible: true

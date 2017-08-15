@@ -5,14 +5,6 @@
 
 Invenio-Statistics is a reusable client library for integrating charts into modern web apps. All charts are built with D3.js.
 
-## Table of contents
-* [Installation](#installation)
-* [Dependencies](#dependencies)
-* [Demo](#demo)
-* [Tests](#tests)
-* [Usage](#usage)
-* [License](#license)
-
 ## Installation
 With npm installed, run:
 
