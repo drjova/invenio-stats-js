@@ -78,7 +78,7 @@ LineGraphConfig.date = {
       },
       options: {
         label: {
-          value: 'Count',
+          value: 'LabelY',
           visible: false
         },
         line: {
@@ -96,8 +96,8 @@ LineGraphConfig.date = {
     }
   },
   title: {
-    visible: true,
-    value: 'Stats per week'
+    value: 'Title',
+    visible: false
   },
   colorScale: 'schemeCategory10',
   tooltip: {
@@ -146,7 +146,7 @@ LineGraphConfig.other = {
       options: {
         padding: 0,
         label: {
-          value: 'Country',
+          value: 'LabelX',
           visible: false
         },
         line: {
@@ -170,7 +170,7 @@ LineGraphConfig.other = {
       },
       options: {
         label: {
-          value: 'Downloads',
+          value: 'LabelY',
           visible: false
         },
         line: {
@@ -188,8 +188,8 @@ LineGraphConfig.other = {
     }
   },
   title: {
-    visible: true,
-    value: 'Stats per country'
+    value: 'Title',
+    visible: false
   },
   colorScale: 'schemeCategory10',
   tooltip: {

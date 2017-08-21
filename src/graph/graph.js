@@ -26,8 +26,6 @@
 
 import * as d3 from 'd3';
 import _ from 'lodash';
-import '../styles/styles.scss';
-import isOut from '../util/util';
 
 require('d3-extended')(d3);
 
@@ -471,7 +469,8 @@ class Graph {
           selectedElements
             .transition()
             .duration(250)
-            .attr('style', toggleLegend ? 'opacity: 1' : 'opacity: 0.3');
+            .attr('style', toggleLegend ? 'opacity: 1' : 'opacity: 0.3')
+            .style('cursor', 'pointer');
         });
 
       // Add the legend to the graph and change cursor
@@ -484,7 +483,8 @@ class Graph {
       }
 
       // Get the dimensions of the current legend
-      const legendBox = this.svg.select('.igj-legend').node().getBBox();
+      const legendBox = d3.select(`.${this.classElement}`)
+        .select('.igj-legend').node().getBBox();
 
       // Position the legend
       if (this.config.legend.position === 'bottom') {
@@ -550,6 +550,15 @@ class Graph {
       keyY = keys[1];
       labelX = labels[0];
       labelY = labels[1];
+    }
+
+    // Helper function to calculate position of tooltip
+    function isOut(valX, valY, w, h) {
+      const out = {};
+      out.top = (valY / h) < 0.15;
+      out.left = (valX / w) < 0.1;
+      out.right = (valX / w) > 0.9;
+      return out;
     }
 
     this.tooltip = d3.tip()
@@ -662,9 +671,9 @@ class Graph {
     */
   scaleOnResize(f) {
     Graph.resizeHandlers.push(f);
-    d3.select(window).on('resize', () => {
+    d3.select(window).on('resize', _.debounce(() => {
       Graph.resizeHandlers.forEach(h => h());
-    });
+    }, 150));
   }
 
   /**

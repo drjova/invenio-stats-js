@@ -45,8 +45,8 @@ BarGraphConfig.other = {
       options: {
         padding: 0.05,
         label: {
-          value: 'Country',
-          visible: true
+          value: 'LabelX',
+          visible: false
         },
         line: {
           visible: false
@@ -69,8 +69,8 @@ BarGraphConfig.other = {
       },
       options: {
         label: {
-          value: 'Count',
-          visible: true
+          value: 'LabelY',
+          visible: false
         },
         line: {
           visible: false
@@ -87,8 +87,8 @@ BarGraphConfig.other = {
     }
   },
   title: {
-    value: 'Count per Country',
-    visible: true
+    value: 'Title',
+    visible: false
   },
   colorScale: 'schemeCategory20',
   tooltip: {

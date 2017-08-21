@@ -45,7 +45,7 @@ GroupedBarGraphConfig.other = {
       options: {
         padding: 0.1,
         label: {
-          value: 'Country',
+          value: 'LabelX',
           visible: false
         },
         line: {
@@ -69,8 +69,8 @@ GroupedBarGraphConfig.other = {
       },
       options: {
         label: {
-          value: 'Count',
-          visible: true
+          value: 'LabelY',
+          visible: false
         },
         line: {
           visible: false
@@ -87,8 +87,8 @@ GroupedBarGraphConfig.other = {
     }
   },
   title: {
-    value: 'Statistics per Country',
-    visible: true
+    value: 'Title',
+    visible: false
   },
   colorScale: 'schemeCategory20',
   tooltip: {
