@@ -50,7 +50,7 @@ const libConfig = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
-  watch: true,
+  watch: env === 'dev' ? true : false,
   module: moduleLoaders,
   plugins: [
     new FriendlyErrorsWebpackPlugin(),
@@ -93,7 +93,7 @@ const examplesConfig = {
 };
 
 /* Export the correct webpack configuration, based on env variable */
-if (env === 'dev') {
+if (env === 'dev' || env ==='build') {
   module.exports = [libConfig];
 } else if (env === 'examples') {
   module.exports = [examplesConfig];

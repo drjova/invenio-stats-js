@@ -1,14 +1,14 @@
 {
-  "name": "invenio-statistics-js",
-  "version": "1.0.0",
+  "name": "drjova-invenio-statistics-js",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "rm -rf ./dist && webpack --env build",
     "dev": "rm -rf ./dist && webpack --progress --env dev ",
     "examples": "rm -rf ./examples/dist && webpack --progress --env examples",
-    "docs": "rm -rf ./docs && node_modules/.bin/jsdoc -c jsdocs-conf.json",
-    "test": "rm -rf ./coverage && karma start --log-level debug --env dev"
+    "docs": "rm -rf ./docs && node_modules/.bin/jsdoc -c .jsdoc",
+    "test": "rm -rf ./coverage && karma start --env dev"
   },
   "keywords": [],
   "author": "CERN",
